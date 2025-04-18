@@ -1,0 +1,6 @@
+volumes:
+- name: ephemeral
+  csi:
+    driver: "ephemeral.csi.k8s.io"
+    volumeAttributes:
+      size: "1Gi"

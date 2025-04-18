@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-demo
+  annotations:
+    kubernetes.io/sidecar: "true"
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh", "-c", "echo App running; sleep 30"]
+  - name: sidecar
+    image: busybox
+    command: ["sh", "-c", "echo Sidecar running; sleep 60"]
